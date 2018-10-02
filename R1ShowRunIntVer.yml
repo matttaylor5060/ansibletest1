@@ -15,7 +15,6 @@
        content: "{{ show_run.stdout[0] }}"
        dest: "/etc/ansible/results/show_run_{{inventory_hostname}}.txt"
        
-  tasks: 
    - name: Show Ver R1
      ios_command:
        commands:
@@ -27,7 +26,6 @@
        content: "{{ show_ver.stdout[0] }}"
        dest: "/etc/ansible/results/show_ver_{{inventory_hostname}}.txt"
        
-  tasks: 
    - name: Show Ver R1
      ios_command:
        commands:
