@@ -29,7 +29,7 @@
    - name: Show Int R1
      ios_command:
        commands:
-         - show int brief
+         - show interface brief
      register: show_int
 
    - name: Save ouput to /etc/ansible/results
