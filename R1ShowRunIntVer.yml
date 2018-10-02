@@ -14,6 +14,6 @@
 
    - name: Save ouput to /etc/ansible/results
      copy:
-       content: "{{ config.stdout[2] }}"
+       content: "{{ config.stdout[0,1,2] }}"
        dest: "/etc/ansible/results/show_run_{{inventory_hostname}}.txt"
        
