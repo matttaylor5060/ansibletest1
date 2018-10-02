@@ -26,7 +26,7 @@
        content: "{{ show_ver.stdout[0] }}"
        dest: "/etc/ansible/results/show_ver_{{inventory_hostname}}.txt"
        
-   - name: Show Ver R1
+   - name: Show Int R1
      ios_command:
        commands:
          - show int brief
