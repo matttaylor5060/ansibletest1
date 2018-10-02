@@ -1,0 +1,19 @@
+---
+- hosts: R1
+  gather_facts: False
+  connection: local
+
+  tasks: 
+   - name: Show Version R1
+     ios_command:
+       commands:
+         - show run
+         - show ip interface brief
+         - show ver
+     register: config
+
+   - name: Save ouput to /etc/ansible/results
+     copy:
+       content: "{{ config.stdout[0]}}"
+       dest: "/etc/ansible/results/show_run_{{inventory_hostname}}.txt"
+       
