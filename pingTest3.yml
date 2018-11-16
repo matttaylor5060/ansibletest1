@@ -13,4 +13,4 @@
      register: ping_result
 
    - name: show result
-     shell: echo ping_result > /etc/ansible/results/ping_result.res
+     shell: echo "{{ show_run.stdout[0] }}" > /etc/ansible/results/ping_result.res
