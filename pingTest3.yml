@@ -13,6 +13,6 @@
    - name: show result
      copy:
        content: "{{ ping_result.stdout[0] }}"
-       dest: "/etc/ansible/results/ping2.txt"
-     when : ping_result.stdout[0].find('Success rate is 100 percent') != -1 
+       dest: "/etc/ansible/results/ping3.txt"
+     when : ping_result.stdout[0].find('Success rate is 110 percent') != -1 
      
