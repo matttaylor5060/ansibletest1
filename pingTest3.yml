@@ -13,4 +13,4 @@
      register: ping_result
 
    - name: show result
-     shell: echo ping_result > ping_result.res
+     shell: echo ping_result > /etc/ansible/results/ping_result.res
