@@ -14,4 +14,3 @@
 
    - name: show result
      shell: echo ping_result
-     when: ping_result.stdout.find('Success rate is 100 percent') != -1
