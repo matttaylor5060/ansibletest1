@@ -1,14 +1,13 @@
 
 
 ---
-- hosts: ansibleServer
+- hosts: R1
   gather_facts: False
   connection: local
 
   tasks: 
-   - name: ping 192.168.1.253
-     command: sudo chmod u+s `which ping`
-     command: ping 192.168.1.253
+   - name: ping 192.168.1.252
+     command: ping 192.168.1.252
      register: ping_result
 
    - name: show result
