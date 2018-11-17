@@ -14,6 +14,7 @@
   gather_facts: False
   connection: local
   
+  tasks: 
    - name: Save ouput to /etc/ansible/results
      copy:
        content: "{{ ping_result.stdout[0] }}"
