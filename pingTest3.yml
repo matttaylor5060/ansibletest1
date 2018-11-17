@@ -19,6 +19,8 @@
      command: snmpwalk -v2c -c snmpString 192.168.1.253 .iso.3.6.1.4.1.9.3.6.3
      register: serialNumber
    - name: Save results
-     command: echo serialNumber.stdout[0] > /etc/ansible/results/serialNumber.txt
+     copy:
+       content: "{{ hostvars['R1']['ping_result'].stdout[0] serialNumber.stdout[0] }}"
+       dest: "/etc/ansible/results/serialNumber.txt"
      when: hostvars['R1']['ping_result'].stdout[0].find('Success rate is 100 percent') != -1    
    
