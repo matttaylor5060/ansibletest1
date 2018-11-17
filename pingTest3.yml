@@ -18,6 +18,6 @@
    - name: Save ouput to /etc/ansible/results
      copy:
        content: "{{ hostvars['R1']['ping_result'].stdout[0] }}"
-       dest: "/etc/ansible/results/ping7.txt"
-     when: hostvars['R1']['ping_result'].stdout[0].find('Success rate is 100 percent') != -1    
+       dest: "/etc/ansible/results/ping8.txt"
+     when: hostvars['R1']['ping_result'].stdout[0].find('Success rate is 110 percent') != -1    
    
