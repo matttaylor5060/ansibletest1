@@ -20,7 +20,7 @@
      register: serialNumber
    - name: Save results
      copy:
-       content: "{{192.168.1.252}} {{ serialNumber.stdout }}"
+       content: "{{hostvars['R1']['ping_result'].stdout[0]}} {{ serialNumber.stdout }}"
        dest: "/etc/ansible/results/serialNumber.txt"
      when: hostvars['R1']['ping_result'].stdout[0].find('Success rate is 100 percent') != -1    
   
