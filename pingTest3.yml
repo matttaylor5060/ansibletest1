@@ -7,7 +7,7 @@
    - name: ping 192.168.1.252
      ios_command:
        commands: 
-        - ping "{{item}}"
+        - ping 192.168.1.252
      register: ping_result
      
 - hosts: ansibleServer
@@ -20,10 +20,8 @@
      register: serialNumber
    - name: Save results
      copy:
-       content: "{{item}} {{ serialNumber.stdout }}"
+       content: "{{192.168.1.252}} {{ serialNumber.stdout }}"
        dest: "/etc/ansible/results/serialNumber.txt"
      when: hostvars['R1']['ping_result'].stdout[0].find('Success rate is 100 percent') != -1    
-   
-loop:
-   - 192.168.1.252
-   - 192.168.1.250
+  
+
