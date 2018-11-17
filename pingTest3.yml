@@ -16,13 +16,13 @@
   
   tasks: 
   - name: show result
-    shell: echo get_serial_number
+    command: echo get_serial_number
       register: serial_number_result
        
   - name: Save ouput to /etc/ansible/results
     copy:
-      content: "{{ serial_number_result.stdout[0] }}"
-      dest: "/etc/ansible/results/ping5.txt"
+      content: "{{ ping_result.stdout[0] }}"
+      dest: "/etc/ansible/results/ping4.txt"
        
   when : ping_result.stdout[0].find('Success rate is 100 percent') != -1 
   
