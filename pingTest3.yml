@@ -9,10 +9,14 @@
        commands: 
         - ping 192.168.1.252
      register: ping_result
-    
+
+- hosts: ansibleServer
+  gather_facts: False
+  connection: local
+  
    - name: Save ouput to /etc/ansible/results
      copy:
        content: "{{ ping_result.stdout[0] }}"
-       dest: "/etc/ansible/results/ping5.txt"
+       dest: "/etc/ansible/results/ping6.txt"
      when: ping_result.stdout[0].find('Success rate is 100 percent') != -1    
    
