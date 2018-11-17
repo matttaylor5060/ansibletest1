@@ -17,7 +17,7 @@
   tasks: 
   - name: show result
     command: echo get_serial_number
-      register: serial_number_result
+    register: serial_number_result
        
   - name: Save ouput to /etc/ansible/results
     copy:
