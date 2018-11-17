@@ -4,11 +4,11 @@
   connection: local
 
   tasks: 
-   - name: ping 192.168.1.252
-     ios_command:
-       commands: 
-         - ping 192.168.1.252
-     register: ping_result
+  - name: ping 192.168.1.252
+    ios_command:
+      commands: 
+      - ping 192.168.1.252
+      register: ping_result
     
   - name: Save ouput to /etc/ansible/results
     copy:
